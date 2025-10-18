@@ -15,7 +15,7 @@ class KCAiKillInfo
         
         KCInfo.Log("Обработка информации об AI");
         ZombieBase zmb = ZombieBase.Cast(killer);
-        if (zmd)
+        if (zmb)
         {
             return TrySendMessage(player, killer);
         }

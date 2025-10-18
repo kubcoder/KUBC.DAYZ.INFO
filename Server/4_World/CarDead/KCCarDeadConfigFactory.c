@@ -50,7 +50,7 @@ class KCCarDeadConfigFactory
     }
 
     /// @brief имя файла конфигурации
-    const string ConfigFileName = "CasrCrash.json";
+    const string ConfigFileName = "CarCrash.json";
 
     /// @brief Получить имя файла конфигурации
     private string GetFileName()
