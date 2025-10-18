@@ -13,7 +13,10 @@ class KCAiKillInfo
     bool SendMessage(PlayerBase player, Object killer)
     {
         KCInfo.Log("Обработка информации об AI");
-        playerInfoSystem.SendMessage(string.Format(config.Message, player.GetIdentity().GetName(), killer.GetDisplayName()));
+        if (player.GetIdentity())
+        {
+            playerInfoSystem.SendMessage(string.Format(config.Message, player.GetIdentity().GetName(), killer.GetDisplayName()));
+        }
         return true;
     }
 }
