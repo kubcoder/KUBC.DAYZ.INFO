@@ -21,23 +21,29 @@ class KCDeadInfo
 
     void SendMessage(PlayerBase player, Object killer)
     {
-        KCInfo.Log("Серть игрока " + player.GetIdentity().GetName() + "("+player+")" + ", убийца: " + killer);
-        if (carDead.SendMessage(player, killer))
+        if(player.GetIdentity())
         {
-            return;
+            KCInfo.Log("Серть игрока " + player.GetIdentity().GetName() + "("+player+")" + ", убийца: " + killer);
+            if (carDead.SendMessage(player, killer))
+            {
+                return;
+            }
+            if (playerDead.SendMessage(player, killer))
+            {
+                return;
+            }
+            if (explosive.SendMessage(player, killer))
+            {
+                return;
+            }
+            if (playerKill.SendMessage(player, killer))
+            {
+                return;
+            }
+            if (aiKill.SendMessage(player, killer))
+            {
+                return;
+            }
         }
-        if (playerDead.SendMessage(player, killer))
-        {
-            return;
-        }
-        if (explosive.SendMessage(player, killer))
-        {
-            return;
-        }
-        if (playerKill.SendMessage(player, killer))
-        {
-            return;
-        }
-        aiKill.SendMessage(player, killer);
     }
 }

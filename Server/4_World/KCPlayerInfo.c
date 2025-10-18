@@ -15,7 +15,7 @@ class KCPlayerInfo
 		{
 			//Берем конкретного игрока сервера
 			PlayerBase player = PlayerBase.Cast(players.Get(i));
-			if(player)
+			if((player)&&(player.GetIdentity()))
 			{
 				GetGame().RPCSingleParam(player, ERPCs.RPC_USER_ACTION_MESSAGE, paramMessage, false, player.GetIdentity());
 			}

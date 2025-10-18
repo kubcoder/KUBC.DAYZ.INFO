@@ -12,8 +12,30 @@ class KCAiKillInfo
 
     bool SendMessage(PlayerBase player, Object killer)
     {
+        
         KCInfo.Log("Обработка информации об AI");
-        playerInfoSystem.SendMessage(string.Format(config.Message, player.GetIdentity().GetName(), killer.GetDisplayName()));
+        ZombieBase zmb = ZombieBase.Cast(killer);
+        if (zmb)
+        {
+            return TrySendMessage(player, killer);
+        }
+        AnimalBase animal = AnimalBase.Cast(killer);
+        if (animal)
+        {
+            return TrySendMessage(player, killer);            
+        }
+        return false;
+    }
+
+    private bool TrySendMessage(PlayerBase player, Object killer)
+    {
+        if (config.Enable)
+        {
+            if (player.GetIdentity())
+            {
+                playerInfoSystem.SendMessage(string.Format(config.Message, player.GetIdentity().GetName(), killer.GetDisplayName()));
+            }            
+        }
         return true;
     }
 }
