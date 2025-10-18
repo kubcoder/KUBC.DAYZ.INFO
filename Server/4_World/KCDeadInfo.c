@@ -40,7 +40,11 @@ class KCDeadInfo
             {
                 return;
             }
-            aiKill.SendMessage(player, killer);
+            if (aiKill.SendMessage(player, killer))
+            {
+                return;
+            }
+            
         }
     }
 }
