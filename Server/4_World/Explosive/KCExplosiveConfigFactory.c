@@ -56,6 +56,6 @@ class KCExplosiveConfigFactory
     /// @return полное имя файла
     string GetFileName()
     {
-        return filesFactory.GetModPath() + "\\" + ConfigFileName;
+        return filesFactory.GetName(ConfigFileName);
     }
 }
