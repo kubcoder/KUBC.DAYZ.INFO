@@ -1,4 +1,6 @@
 # Журнал версий
+## [1.2](https://github.com/kubcoder/KUBC.DAYZ.INFO/releases/tag/1.2) (26.04.2026)
+Добавлена поддержка серверов, работающих под управлением Linux
 ## [1.1](https://github.com/kubcoder/KUBC.DAYZ.INFO/releases/tag/1.1) (18.10.2025)
 ## Исправлено
 - Ошибки сервера по отсутсвию идентификации игрока ( #5 #6 )
