@@ -55,6 +55,6 @@ class KCCarDeadConfigFactory
     /// @brief Получить имя файла конфигурации
     private string GetFileName()
     {
-        return filesFactory.GetModPath() + "\\" + ConfigFileName;
+        return filesFactory.GetName(ConfigFileName);
     }
 }

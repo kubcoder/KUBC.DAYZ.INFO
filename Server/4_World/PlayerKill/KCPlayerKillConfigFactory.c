@@ -57,6 +57,6 @@ class KCPlayerKillConfigFactory
     /// @return полное имя файла
     private string GetFileName()
     {
-        return filesFactory.GetModPath() + "\\" + ConfigFileName;
+        return filesFactory.GetName(ConfigFileName);
     }
 }

@@ -4,22 +4,16 @@
 		"DayZ.Server.Config":"Sample\\serverDZ.cfg",
 		//Папочка где лежит экземпляр сервера DAYZ
 		"DayZ.Server.Path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer",
-		"C_Cpp.configurationWarnings": "disabled",
-		"C_Cpp.default.browse.path": [
+		"Mod.Path": "KUBC.DAYZ.INFO",
+		"enscript.includePaths": [
 			"P:\\scripts",
-			"P:\\KUBC"
+			"P:\\KUBC.DAYZ.CONSOLE"
 		],
-		"C_Cpp.default.includePath": [
-			"P:\\scripts",
-			"P:\\KUBC"
-		],
-		"C_Cpp.default.systemIncludePath": [
-			"P:\\scripts",
-			"P:\\KUBC"
-		],
-		"C_Cpp.errorSquiggles": "disabled",
-		"C_Cpp.intelliSenseEngine": "Tag Parser",
-		"C_Cpp.workspaceSymbols": "All"
+		"better-comments.highlightPlainText": true,
+		"better-comments.multilineComments": true,
+		"editor.cursorBlinking": "phase",
+		"editor.smoothScrolling": true,
+		"editor.cursorSmoothCaretAnimation": "on"
 	},
 	"folders": [
 		{
@@ -38,6 +32,10 @@
 			"name": "ROOT",
 			"path": "."
 		},
+		{
+			"name": "Required",
+			"path": "./Required"
+		}
 	],
 	"tasks": {
 		"version": "2.0.0",
@@ -108,6 +106,34 @@
 					"clear": false
 				}
 			},
+			{
+				"detail": "Создать ссылочную папку на диске P",
+				"label": "Create DEV Link",
+				"type": "shell",
+				"command": "cmd /c mklink /j 'P:\\${config:Mod.Path}'  '${workspaceFolder:SERVER}'",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": false,
+					"clear": false
+				}
+			},
+			{
+				"detail": "Создать ссылочную папку требуемых модов",
+				"label": "Create Requreds",
+				"type": "shell",
+				"command": "cmd /c mklink /j '${config:DayZ.Server.Path}\\KUBC'  '${workspaceFolder:Required}'",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": false,
+					"clear": false
+				}
+			}
 		]
 	}
 }
